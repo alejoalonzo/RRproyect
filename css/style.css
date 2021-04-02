@@ -1,0 +1,323 @@
+/* Reset inicial */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ------------------------HEADER------------ */
+#encabezado {
+  width: 100%;
+  height: 1000px;
+  background-color: #eeee;
+}
+
+nav {
+  width: 100%;
+  height: 100px;
+  background-color: #222831;
+  position: fixed;
+  z-index: 1;
+}
+
+#logo {
+  width: 260px;
+  height: 100px;
+  background-color: #eeee;
+  float: left;
+  margin-left: 100px;
+}
+
+#menu {
+  list-style-type: none;
+  width: auto;
+  overflow: hidden;
+  float: right;
+  margin-right: 30px;
+}
+
+.elementoMenu {
+  float: left;
+  margin: 0 20px;
+  /* background-color: yellow; */
+  line-height: 100px;
+}
+.elementoMenu > a {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 1.7rem;
+  text-decoration: none;
+  color: #eeee;
+  /* background-color: green; */
+}
+
+#submenu {
+  width: auto;
+  height: auto;
+  list-style: none;
+  z-index: 1;
+  position: absolute;
+  top: 70px;
+  display: none;
+  background-color: gray;
+}
+
+.elementoSubMenu {
+  width: 100%;
+  height: 40px;
+  line-height: 50px;
+}
+.elementoSubMenu > a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #eeee;
+  background-color: green;
+}
+
+#tituloEncabezado {
+  font-size: 3.8rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  /* background-color: gray; */
+  color: #222831;
+  padding-left: 270px;
+  position: relative;
+  top: 455px;
+}
+
+.subTituloEncabezado {
+  width: 970px;
+  font-size: 2rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  /* background-color: gray; */
+  color: #222831;
+  padding-left: 270px;
+  position: relative;
+  top: 500px;
+}
+.subTituloEncabezado2 {
+  position: relative;
+  top: 530px;
+}
+/* ---------------------FIN HEADER------------ */
+
+/* ------------------------fILOSOFÍA---------- */
+#filosofia {
+  width: 100%;
+  height: 950px;
+  background-color: #f8f8f8;
+  overflow: hidden;
+}
+.tituloSeccion {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 3.5rem;
+  /* background-color: seagreen; */
+  text-align: center;
+  margin-top: 200px;
+}
+#contenedorFilo {
+  width: 1200px;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  /* background-color: silver; */
+  overflow: hidden;
+}
+.colFilo {
+  width: 50%;
+  height: 500px;
+  /* background-color: orange;
+  border-style: solid; */
+  float: left;
+}
+.colFilo > p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.75;
+  padding-left: 20px;
+}
+#videoFilo {
+  width: 100%;
+  background-color: blue;
+  height: 345px;
+}
+/* ---------------------FIN fILOSOFÍA--------- */
+
+/* --------------------- SERVICIOS--------- */
+#servicios {
+  width: 100%;
+  height: 900px;
+  background-color: black;
+  overflow: hidden;
+}
+.tituloSeccionBlanco {
+  color: #eeee;
+  margin-top: 100px;
+}
+#textoServicios {
+  width: 1200px;
+  color: #eeee;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: auto;
+  /* background-color: gray; */
+  margin-top: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.75;
+}
+#contenedorIconos {
+  width: 1250px;
+  height: 550px;
+  /* background-color: green; */
+  margin: auto;
+  margin-top: 50px;
+  overflow: hidden;
+}
+.iconoservicio {
+  width: calc(20% - 50px);
+  height: calc(50% - 50px);
+  /* background-color: brown; */
+  border-style: solid;
+  float: left;
+  margin: 25px;
+}
+.imgServicio {
+  width: 100%;
+  height: 170px;
+  background-color: gray;
+}
+.nombreServicio {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #eeee;
+  margin-top: 3px;
+}
+/* ---------------------FIN SERVICIOS--------- */
+
+/* ---------------------CONTACTO--------- */
+#contacto {
+  width: 100%;
+  height: 900px;
+  background-color: #fff;
+  overflow: hidden;
+}
+#contenedorContacto {
+  width: 1200px;
+  height: 375px;
+  /* background-color: green; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 95px;
+  overflow: hidden;
+}
+#map {
+  float: left;
+}
+#formu {
+  width: 50%;
+  height: 375px;
+  /* background-color: pink; */
+  float: left;
+  padding-top: 15px;
+  padding-left: 60px;
+}
+input {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  display: block;
+  height: 40px;
+  margin-top: 20px;
+  width: 500px;
+  padding-left: 20px;
+}
+#comentario {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  height: 90px;
+  padding-bottom: 50px;
+}
+#btnEnviar {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  width: 150px;
+  border-style: none;
+  background-color: #53ad5d;
+  font-size: 1.5rem;
+  color: #ffffff;
+  padding-left: 0;
+}
+
+/* ---------------------FIN CONTACTO--------- */
+
+/* ---------------------FOOTER--------- */
+#pie {
+  width: 100%;
+  height: 900px;
+  background-color: #222831;
+  overflow: hidden;
+}
+#contenedorGaleria {
+  width: 1200px;
+  height: 175px;
+  background-color: lightblue;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.imgGal {
+  width: 16.6%;
+  height: 100%;
+  background-color: orange;
+  border-style: solid;
+  float: left;
+}
+#contenedorHorariosRRSS {
+  width: 1200px;
+  height: 160px;
+  /* background-color: gray; */
+  margin-top: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+.contenedortexto {
+  width: 33.3%;
+  height: 100%;
+  /* background-color: brown; */
+  float: left;
+}
+.tituloRRSS {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 1.7rem;
+  color: #eeee;
+  padding-top: 10px;
+}
+.textoFooter {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #eeee;
+  margin: auto;
+  /* background-color: gray; */
+  margin-top: 25px;
+  padding-right: 25px;
+}
+.imgRRSS {
+  width: 65px;
+  height: 65px;
+  background-color: #eeee;
+  float: right;
+  margin: 3px;
+}
+/* ---------------------FIN FOOTER--------- */

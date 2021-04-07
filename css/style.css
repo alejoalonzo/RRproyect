@@ -10,6 +10,8 @@
   width: 100%;
   height: 1000px;
   background-color: #eeee;
+  background-image: url(../media/heroImageBG.jpg);
+  background-size: cover;
 }
 
 nav {
@@ -24,6 +26,7 @@ nav {
   width: 260px;
   height: 100px;
   background-color: #eeee;
+  display: block;
   float: left;
   margin-left: 100px;
 }
@@ -152,6 +155,9 @@ nav {
   width: 100%;
   height: 900px;
   background-color: black;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../media/serviciosBG.jpg);
+  background-size: cover;
   overflow: hidden;
 }
 .tituloSeccionBlanco {
@@ -190,7 +196,11 @@ nav {
 .imgServicio {
   width: 100%;
   height: 170px;
-  background-color: gray;
+  /* background-color: gray; */
+}
+.imgServicio img {
+  width: 100%;
+  height: 100%;
 }
 .nombreServicio {
   font-family: "Montserrat", sans-serif;
@@ -207,6 +217,11 @@ nav {
   width: 100%;
   height: 900px;
   background-color: #fff;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.9)
+    ),
+    url(../media/contactoBG.jpg);
   overflow: hidden;
 }
 #contenedorContacto {
@@ -269,7 +284,7 @@ input {
 #contenedorGaleria {
   width: 1200px;
   height: 175px;
-  background-color: lightblue;
+  /* background-color: lightblue; */
   margin-top: 80px;
   margin-left: auto;
   margin-right: auto;
@@ -278,7 +293,7 @@ input {
   width: 16.6%;
   height: 100%;
   background-color: orange;
-  border-style: solid;
+  border: 1px solid #222831;
   float: left;
 }
 #contenedorHorariosRRSS {
@@ -316,8 +331,14 @@ input {
 .imgRRSS {
   width: 65px;
   height: 65px;
-  background-color: #eeee;
+  /* background-color: #eeee; */
   float: right;
   margin: 3px;
+}
+.imgRRSS i {
+  line-height: 100px;
+  color: #eeee;
+  font-size: 3.5rem;
+  margin-top: -17px;
 }
 /* ---------------------FIN FOOTER--------- */

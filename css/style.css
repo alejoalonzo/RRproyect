@@ -49,20 +49,27 @@ nav {
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 1.7rem;
+  display: block;
   text-decoration: none;
   color: #eeee;
   /* background-color: green; */
 }
+.elementoMenu a:hover {
+  color: #00adb5;
+  transform: scale(1.2, 1.2);
+  transition: all 400ms;
+}
 
+/* ------------------------SUBMENU------------ */
 #submenu {
   width: auto;
   height: auto;
   list-style: none;
   z-index: 1;
   position: absolute;
-  top: 70px;
+  top: 100px;
   display: none;
-  background-color: gray;
+  background-color: #222831;
 }
 
 .elementoSubMenu {
@@ -71,11 +78,24 @@ nav {
   line-height: 50px;
 }
 .elementoSubMenu > a {
-  font-size: 1.5rem;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.3rem;
   text-decoration: none;
   color: #eeee;
-  background-color: green;
+  /* background-color: green; */
+  padding: 15px;
 }
+.elementoSubMenu:hover {
+  background-color: #393e46;
+  color: #eee;
+  transition: all 400ms;
+}
+
+/* Esta es la regla para que se muestre el submenu */
+.elementoMenu:hover #submenu {
+  display: block;
+}
+/* ------------------------fIN sUBMENU------------ */
 
 #tituloEncabezado {
   font-size: 3.8rem;
@@ -86,6 +106,7 @@ nav {
   padding-left: 270px;
   position: relative;
   top: 455px;
+  animation: showTextTitle 6s linear;
 }
 
 .subTituloEncabezado {
@@ -98,10 +119,66 @@ nav {
   padding-left: 270px;
   position: relative;
   top: 500px;
+  animation-name: subTitle;
+  animation-duration: 8s;
 }
 .subTituloEncabezado2 {
   position: relative;
   top: 530px;
+  animation-name: subTitle2;
+  animation-duration: 8s;
+}
+
+/* ------------------------ANIMACIONES------------ */
+@keyframes showTextTitle {
+  0% {
+    transform: translateX(-600%) scale(5, 5);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(600%) scale(5, 5);
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(-600%) scale(5, 5);
+    text-shadow: none;
+    color: transparent;
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0%) scale(1, 1);
+    text-shadow: 2px 2px 1px #333333;
+    opacity: 1;
+  }
+}
+@keyframes subTitle {
+  0% {
+    opacity: 0;
+    top: 550px;
+  }
+  50% {
+    opacity: 0;
+    top: 550px;
+  }
+  100% {
+    opacity: 1;
+    top: 500px;
+  }
+}
+@keyframes subTitle2 {
+  0% {
+    opacity: 0;
+    top: 550px;
+  }
+  50% {
+    opacity: 0;
+    top: 550px;
+  }
+  100% {
+    opacity: 1;
+    top: 530px;
+  }
 }
 /* ---------------------FIN HEADER------------ */
 
@@ -270,6 +347,14 @@ input {
   font-size: 1.5rem;
   color: #ffffff;
   padding-left: 0;
+  transition-property: color, background-color, border;
+  transition-duration: 600ms;
+}
+#btnEnviar:hover {
+  background-color: #ffffff;
+  color: #53ad5d;
+  border: 1px solid #53ad5d;
+  border-radius: 2px;
 }
 
 /* ---------------------FIN CONTACTO--------- */
@@ -295,6 +380,12 @@ input {
   background-color: orange;
   border: 1px solid #222831;
   float: left;
+}
+.imgGal:hover {
+  transform: scale(1.4, 1.4);
+  transition: all 400ms;
+  border: 1px solid #00adb5;
+  border-radius: 6px;
 }
 #contenedorHorariosRRSS {
   width: 1200px;
@@ -340,5 +431,8 @@ input {
   color: #eeee;
   font-size: 3.5rem;
   margin-top: -17px;
+}
+#contenedorImgRRSS i:hover {
+  color: #00adb5;
 }
 /* ---------------------FIN FOOTER--------- */

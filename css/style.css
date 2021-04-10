@@ -5,6 +5,56 @@
   box-sizing: border-box;
 }
 
+/* ------------------------MODAL BIENVENIDA------ */
+#modalBienvenida {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(rgba(34, 40, 49, 0.8), black);
+  position: fixed;
+  display: none;
+  z-index: 5;
+}
+#modalBoxBienvenida {
+  height: 530px;
+  width: 510px;
+  background-color: #eee;
+  position: absolute;
+  /* regla para centrar */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border-radius: 10px;
+}
+#modalBoxBienvenida h1 {
+  font-size: 3rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  color: #393e46;
+  padding-top: 150px;
+}
+#modalBoxBienvenida p {
+  font-size: 1.2rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  color: #393e46;
+  margin: 32px;
+}
+#modalBoxBienvenida button {
+  font-size: 1.2rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  border-radius: 50px;
+  border: 1px solid #c7b9ae;
+  padding: 15px 30px;
+  background-color: #c7b9ae;
+  color: #eee;
+  box-shadow: 4px 6px 14px #cfcfcf;
+}
+#modalBoxBienvenida button:hover {
+  background-color: #222831;
+}
+/* ------------------------FIN MODAL BIENVENIDA-- */
 /* ------------------------HEADER------------ */
 #encabezado {
   width: 100%;
@@ -19,6 +69,9 @@ nav {
   height: 100px;
   background-color: #222831;
   position: fixed;
+  top: 0;
+  transition-property: top;
+  transition-duration: 500ms;
   z-index: 1;
 }
 
@@ -109,7 +162,7 @@ nav {
   animation: showTextTitle 6s linear;
 }
 
-.subTituloEncabezado {
+#subTituloEncabezado {
   width: 970px;
   font-size: 2rem;
   font-family: "Raleway", sans-serif;
@@ -122,7 +175,14 @@ nav {
   animation-name: subTitle;
   animation-duration: 8s;
 }
-.subTituloEncabezado2 {
+#subTituloEncabezado2 {
+  width: 970px;
+  font-size: 2rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  /* background-color: gray; */
+  color: #222831;
+  padding-left: 270px;
   position: relative;
   top: 530px;
   animation-name: subTitle2;
@@ -356,6 +416,57 @@ input {
   border: 1px solid #53ad5d;
   border-radius: 2px;
 }
+/* ------------------------MODAL CONTACTO------ */
+#modalDatosCliente {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(rgba(34, 40, 49, 0.8), black);
+  position: fixed;
+  top: 0;
+  display: none;
+  z-index: 5;
+}
+#modalBoxDatosCliente {
+  height: 330px;
+  width: 490px;
+  background-color: #eee;
+  position: absolute;
+  /* regla para centrar */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border-radius: 10px;
+}
+#modalBoxDatosCliente h1 {
+  font-size: 2.2rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  color: #393e46;
+  padding-top: 40px;
+}
+#modalBoxDatosCliente p {
+  font-size: 1.2rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  color: #393e46;
+  margin: 32px;
+}
+#modalBoxDatosCliente button {
+  font-size: 1.2rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  border-radius: 50px;
+  border: 1px solid #c7b9ae;
+  padding: 15px 30px;
+  background-color: #c7b9ae;
+  color: #eee;
+  box-shadow: 4px 6px 14px #cfcfcf;
+}
+#modalBoxDatosCliente button:hover {
+  background-color: #222831;
+}
+/* ------------------------FIN MODAL CONTACTO-- */
 
 /* ---------------------FIN CONTACTO--------- */
 
@@ -387,6 +498,59 @@ input {
   border: 1px solid #00adb5;
   border-radius: 6px;
 }
+
+/* ------------------------MODAL LIGHTBOX------ */
+#lightBoxGale {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(rgba(34, 40, 49, 0.8), black);
+  position: fixed;
+  display: none;
+  top: 0;
+  z-index: 5;
+}
+#imageToSwow {
+  height: 654px;
+  width: 748px;
+  background-color: #eee;
+  position: absolute;
+  /* regla para centrar */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.imgLightBoxGale {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.lightBoxBtn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid #eee;
+}
+.lightBoxBtn:hover {
+  background-color: #00adb5;
+}
+.lightBoxBtnRight {
+  right: 510px;
+}
+.lightBoxBtnLeft {
+  left: 510px;
+}
+.lightBoxBtn i {
+  font-size: 1.3rem;
+  color: #222831;
+}
+.lightBoxBtn:hover i {
+  color: #eee;
+}
+/* ------------------------FIN MODAL LIGHTBOX------ */
 #contenedorHorariosRRSS {
   width: 1200px;
   height: 160px;

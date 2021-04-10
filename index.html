@@ -24,9 +24,23 @@
     ></script>
   </head>
   <body>
+    <!-- ----------------------------------------MODAL BIENVENIDA------------------------ -->
+    <div id="modalBienvenida">
+      <div id="modalBoxBienvenida">
+        <img src="./media/logo2.jpg" alt="" />
+        <h1>Bienvenido</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolore
+          sequi quaerat
+        </p>
+        <button onclick="cerrarModalBienvenida()">Empezar</button>
+      </div>
+    </div>
+    <!-- ----------------------------------------FINAL MODAL BIENVENIDA------------------------ -->
+
     <!-- ----------------------------------------ENCABEZADO------------------------ -->
     <header id="encabezado">
-      <nav>
+      <nav id="navbar">
         <a href="index.html">
           <div id="logo"><img src="./media/logo2.jpg" alt="" /></div>
         </a>
@@ -54,12 +68,10 @@
       </nav>
 
       <h1 id="tituloEncabezado">R&R Extranjería y Gestión</h1>
-      <h2 class="subTituloEncabezado">
+      <h2 id="subTituloEncabezado">
         ¿Le gustaría obtener un permiso de Residencia y Trabajo en España?
       </h2>
-      <h2 class="subTituloEncabezado subTituloEncabezado2">
-        Nosotros le ayudamos.
-      </h2>
+      <h2 id="subTituloEncabezado2">Nosotros le ayudamos.</h2>
     </header>
     <!-- ----------------------------------------FIN ENCABEZADO------------------------ -->
 
@@ -159,18 +171,54 @@
           loading="lazy"
         ></iframe>
         <form action="" id="formu">
-          <input type="text" name="Nombre" placeholder="Nombre y Apellidos" />
-          <input type="email" name="E-mail" placeholder="E-mail" />
-          <input type="tel" name="Telefono" placeholder="Teléfono" />
+          <input
+            id="nombreContacto"
+            type="text"
+            name="Nombre"
+            placeholder="Nombre y Apellidos"
+            required
+          />
+          <input
+            id="emailContacto"
+            type="email"
+            name="E-mail"
+            placeholder="E-mail"
+            required
+          />
+          <input
+            id="telefonoContacto"
+            type="tel"
+            name="Telefono"
+            placeholder="Teléfono"
+            required
+          />
           <input
             type="text"
             id="comentario"
             name="Comentario"
             placeholder="Comentario"
+            required
           />
-          <input type="submit" id="btnEnviar" name="Enviar" value="Enviar" />
+          <input
+            id="btnEnviar"
+            onclick="modalDatosCliente()"
+            name="Enviar"
+            value="Enviar"
+          />
         </form>
       </div>
+      <!-- ----------------------------------------MODAL CONTACTO------------------------ -->
+      <div id="modalDatosCliente">
+        <div id="modalBoxDatosCliente">
+          <h1>Sus datos se han enviado</h1>
+          <p id="textoModalCliente">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolore
+            sequi quaerat
+          </p>
+          <button onclick="cerrarModalContacto()">Volver</button>
+        </div>
+      </div>
+      <!-- ----------------------------------------FINAL MODAL CONTACTO------------------------ -->
     </section>
     <!-- ---------------------------------------FIN CONTACTO------------------------ -->
 
@@ -186,6 +234,17 @@
           <img class="imgGal" src="./media/gal5.jpg" alt="" />
           <img class="imgGal" src="./media/gal6.jpg" alt="" />
         </div>
+        <!-- ---------------------------------------MODAL GALERIA------------------------ -->
+        <div id="lightBoxGale">
+          <div id="imageToSwow"></div>
+          <button class="lightBoxBtn lightBoxBtnRight" onclick="nextImg()">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <button class="lightBoxBtn lightBoxBtnLeft" onclick="preImg()">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+        </div>
+        <!-- ---------------------------------------MODAL GALERIA------------------------ -->
       </section>
       <div id="contenedorHorariosRRSS">
         <div class="contenedortexto">
@@ -215,7 +274,8 @@
     </footer>
     <!-- ---------------------------------------FIN FOOTER------------------------ -->
     <script>
-      prueba();
+      modalBienvenida();
+      readyLightBosx();
     </script>
   </body>
 </html>

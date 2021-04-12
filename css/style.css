@@ -4,6 +4,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  /* por las animaciones, escondo el scrol hacia lateral*/
+  overflow-x: hidden;
+}
 
 /* ------------------------MODAL BIENVENIDA------ */
 #modalBienvenida {
@@ -257,7 +261,26 @@ nav {
   text-align: center;
   margin-top: 200px;
 }
-#contenedorFilo {
+#contenedorEtiquetas {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  margin-top: 60px;
+}
+.etiquetaPestana {
+  width: 50%;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-size: 2rem;
+  float: left;
+  text-align: center;
+  color: #393e46;
+}
+.pestanaActiva {
+  color: #00adb5;
+}
+.contenedorFilo {
   width: 1200px;
   height: 500px;
   margin-left: auto;
@@ -266,6 +289,7 @@ nav {
   /* background-color: silver; */
   overflow: hidden;
 }
+
 .colFilo {
   width: 50%;
   height: 500px;
@@ -282,9 +306,10 @@ nav {
 }
 #videoFilo {
   width: 100%;
-  background-color: blue;
+  background-color: gray;
   height: 345px;
 }
+
 /* ---------------------FIN fILOSOFÍA--------- */
 
 /* --------------------- SERVICIOS--------- */
@@ -322,30 +347,63 @@ nav {
   margin-top: 50px;
   overflow: hidden;
 }
+
 .iconoservicio {
   width: calc(20% - 50px);
   height: calc(50% - 50px);
   /* background-color: brown; */
-  border-style: solid;
+  /* border-style: solid; */
   float: left;
   margin: 25px;
+  transition: all 300ms;
 }
 .imgServicio {
   width: 100%;
-  height: 170px;
+  height: auto;
   /* background-color: gray; */
 }
 .imgServicio img {
   width: 100%;
   height: 100%;
 }
+
+.iconoservicio .imgServicio:hover img {
+  animation: showIcon 300ms linear;
+}
+
+@keyframes showIcon {
+  from {
+    transform: translateX(-80%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
 .nombreServicio {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-align: center;
   color: #eeee;
   margin-top: 3px;
+  transition: all 300ms;
+}
+
+.iconoservicio:hover .nombreServicio {
+  animation: showText 300ms linear;
+  color: #00adb5;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+@keyframes showText {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
 }
 /* ---------------------FIN SERVICIOS--------- */
 
@@ -406,7 +464,7 @@ input {
   background-color: #53ad5d;
   font-size: 1.5rem;
   color: #ffffff;
-  padding-left: 0;
+  padding-left: 33px;
   transition-property: color, background-color, border;
   transition-duration: 600ms;
 }
@@ -467,8 +525,64 @@ input {
   background-color: #222831;
 }
 /* ------------------------FIN MODAL CONTACTO-- */
-
 /* ---------------------FIN CONTACTO--------- */
+
+/* ---------------------PARALLAX--------- */
+.containerParallax {
+  width: 100%;
+  margin: 0 auto;
+  /* background-color: #eeee;
+  padding: 25px; */
+}
+.parallax-window {
+  min-height: 500px;
+  background: transparent;
+}
+
+/* ---------------------FIN PARALLAX--------- */
+
+/* --------------------- ACCORDION--------- */
+#accordion {
+  width: 80%;
+  max-width: 600px;
+  margin: 50px auto;
+}
+#boletines {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.7rem;
+  padding-left: 30px;
+  color: #222831;
+  margin-bottom: 10px;
+}
+#accordion button {
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  background-color: #eeee;
+  color: #222831;
+  border: none;
+  outline: none;
+  text-align: left;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: background-color 300ms linear;
+}
+#accordion button:hover {
+  background-color: #00adb5;
+}
+.accordionContent {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  padding: 0 30px;
+  border: 1px solid #eeee;
+  margin-bottom: 5px;
+  max-height: 0;
+  overflow: hidden;
+}
+/* ---------------------FIN ACCORDION--------- */
 
 /* ---------------------FOOTER--------- */
 #pie {
@@ -488,7 +602,7 @@ input {
 .imgGal {
   width: 16.6%;
   height: 100%;
-  background-color: orange;
+  /* background-color: orange; */
   border: 1px solid #222831;
   float: left;
 }

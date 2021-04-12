@@ -12,8 +12,27 @@ function cerrarModalBienvenida(){
     document.getElementById("tituloEncabezado").style.animationPlayState="running";
     document.getElementById("subTituloEncabezado").style.animationPlayState="running";
     document.getElementById("subTituloEncabezado2").style.animationPlayState="running";
-    document.documentElement.style.overflow="auto";
+    document.documentElement.style.overflowY="auto";// en "Y" para que no me salga la barra de scrol hacia lateral
+    setInterval(heroSlideShow,4000);//setInterval: funcion de manera ciclica hasta el infinito, los dos paramertos son: la funcion y el tiempo en ms.
 }
+
+// -----------------------------------------------------CARRUSEL------------------- 
+var bgCounter=0;
+function heroSlideShow() {
+    var listaImgBg =[//ojo con el path, si estas desde JS tiene que ser como si fuera del HTML
+        "url('./media/heroImageBG.jpg')",
+        "url('./media/heroImageBG2.jpg')",
+        "url('./media/heroImageBG3.jpg')"
+    ];
+    bgCounter++;
+
+    if(bgCounter == listaImgBg.length){//if para reinicializar 
+        bgCounter = 0;
+    }
+    document.getElementById("encabezado").style.backgroundImage = listaImgBg[bgCounter];
+}
+
+// -----------------------------------------------------FIN CARRUSEL------------------- 
 
 function modalDatosCliente(){
     document.getElementById("modalDatosCliente").style.display="block"; 
@@ -43,7 +62,7 @@ function modalDatosCliente(){
 
 function cerrarModalContacto(){
     document.getElementById("modalDatosCliente").style.display="none";
-    document.documentElement.style.overflow="auto";
+    document.documentElement.style.overflowY="auto";
 
     document.getElementById("nombreContacto").value = "";
     document.getElementById("emailContacto").value = "";
@@ -51,6 +70,7 @@ function cerrarModalContacto(){
     document.getElementById("comentario").value = "";
 }
 
+// -----------------------------------------------------FIN MODALES--------------------
 // -----------------------------------------------------NAVBAR-------------------
 var posAnteriorScrol = document.documentElement.scrollTop;
 
@@ -66,7 +86,7 @@ function esconderMostrarMenu(){
     posAnteriorScrol = posActualScrol;
 }
 
-
+// -----------------------------------------------------FIN NAVBAR-------------------
 
 // -----------------------------------------------------LIGHTBOX-------------------  
 
@@ -118,7 +138,7 @@ function readyLightBosx(){
             //comprueba si no es en la imagen, ni los botones, ni los iconos
             if(!event.target.matches(".imgLightBoxGale") && !event.target.matches(".imgGal") && !event.target.matches(".fas") && !event.target.matches(".lightBoxBtn")){
                 document.getElementById("lightBoxGale").style.display= "none";//esconder el modal
-                document.documentElement.style.overflow= "auto";//aparece scrol
+                document.documentElement.style.overflowY= "auto";//aparece scrol
             }
         });
     }
@@ -144,3 +164,43 @@ function preImg(){
     document.getElementById("imageToSwow").innerHTML = "<img class = 'imgLightBoxGale' src= "+listaRutaImg[contadorImg]+ ">";
     
 }
+// -----------------------------------------------------FIN LIGHTBOX-------------------  
+
+
+// -----------------------------------------------------PESTAÑAS------------------- 
+function marcarPestana(contenedorAmostrar,tabClicked){//con parametros que seran las ids de cada pestaña
+
+    var listaConPestanas = document.getElementsByClassName("contenedorFilo");
+    for(var i=0; i<listaConPestanas.length; i++){//bucle para esconder contenedores
+        listaConPestanas[i].style.display="none";
+    }
+    document.getElementById(contenedorAmostrar).style.display="block";//mostrar la clickada
+
+
+    var tabLinks = document.getElementsByClassName("etiquetaPestana");
+    for(var i=0; i<tabLinks.length; i++){//otro bucle para quitar tag select(pestanaActiva)
+        tabLinks[i].classList.remove("pestanaActiva");
+    }
+    document.getElementById(tabClicked).classList.add("pestanaActiva");//mostramos el tag clicado
+} 
+// -----------------------------------------------------FIN PESTAÑAS------------------- 
+
+// -----------------------------------------------------ACORDION------------------- 
+function showAndHide() {
+    var acordion = document.getElementsByClassName("accordion");
+
+    for(var i = 0; i < acordion.length; i++){
+        acordion[i].onclick= function(){
+            var content = this.nextElementSibling;
+
+            if(content.style.maxHeight){//si esta abierto, para cerrar
+                content.style.maxHeight = null;
+            }else{
+                content.style.maxHeight = content.scrollHeight + "px";//para abrirlo y que sea dinamico
+            }
+        }
+    } 
+}
+
+
+

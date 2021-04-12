@@ -22,7 +22,20 @@
       src="https://kit.fontawesome.com/09fe00cf62.js"
       crossorigin="anonymous"
     ></script>
+    <!-- precarga de imagenes para que no den flash -->
+    <link rel="preload" as="image" href="media/logo2.jpg">
+    <link rel="preload" as="image" href="media/heroImageBG.jpg">
+    <link rel="preload" as="image" href="media/heroImageBG2.jpg">
+    <link rel="preload" as="image" href="media/heroImageBG3.jpg">
   </head>
+
+  <!-- animaciones de scroll  libreria AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- parallax -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="./js/parallax.min.js"></script> 
   <body>
     <!-- ----------------------------------------MODAL BIENVENIDA------------------------ -->
     <div id="modalBienvenida">
@@ -46,21 +59,19 @@
         </a>
         <ul id="menu">
           <li class="elementoMenu"><a href="#encabezado">Inicio</a></li>
-          <li class="elementoMenu"><a href="#filosofia">Filosofía</a></li>
-          <li class="elementoMenu">
-            <a href="#servicios">Servicios</a>
+          <li class="elementoMenu"><a href="#filosofia">Filosofía</a>
             <ul id="submenu">
               <li class="elementoSubMenu">
-                <a href="">Nombre del Servicio</a>
+                <a href="#filosofia" onclick="marcarPestana('valores','tabValores')">Valores</a>
               </li>
               <li class="elementoSubMenu">
-                <a href="">Nombre del Servicio</a>
+                <a href="#filosofia" onclick="marcarPestana('compromiso','tabCompromiso')">Compromiso</a>
               </li>
-              <li class="elementoSubMenu">
-                <a href="">Nombre del Servicio</a>
-              </li>
-              <li class="elementoSubMenu"><a href="">Otros</a></li>
             </ul>
+          </li>
+          <li class="elementoMenu">
+            <a href="#servicios">Servicios</a>
+            
           </li>
           <li class="elementoMenu"><a href="#contacto">Contacto</a></li>
           <li class="elementoMenu"><a href="#galeria">Galería</a></li>
@@ -77,21 +88,56 @@
 
     <!-- ----------------------------------------FILOSOFÍA------------------------ -->
     <section id="filosofia">
-      <h2 class="tituloSeccion">Filosofía</h2>
-      <div id="contenedorFilo">
+      <h2 class="tituloSeccion" data-aos="fade-up">Filosofía</h2>
+      <div id="contenedorEtiquetas">
+        <p id="tabValores"
+          class="etiquetaPestana pestanaActiva"
+          onclick="marcarPestana('valores','tabValores')"
+          data-aos="fade-up"
+        >
+          Valores
+        </p>
+        <p id="tabCompromiso" class="etiquetaPestana" onclick="marcarPestana('compromiso','tabCompromiso')" data-aos="fade-up">
+          Compromiso
+        </p>
+      </div>
+      <div class="contenedorFilo" id="valores">
         <div class="colFilo">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum
+            aliquip ex ea commodo consequat. 
           </p>
         </div>
         <div class="colFilo">
-          <div id="videoFilo"></div>
+          <div id="videoFilo">
+            <video
+              src="./media/valores.mp4"
+              id="videoFilo"
+              controls
+              poster="./media/posterVideo.jpg"
+            ></video>
+          </div>
+        </div>
+      </div>
+
+      <div class="contenedorFilo" id="compromiso">
+        <div class="colFilo">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in repreha
+            liquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in volupt.
+          </p>
+          </p>
+        </div>
+        <div class="colFilo">
+          <div id="imgCompromiso">
+            <img src="./media/compromiso.jpg" alt="" />
+          </div>
         </div>
       </div>
     </section>
@@ -99,8 +145,8 @@
 
     <!-- --------------------------------------- SERVICIOS------------------------ -->
     <section id="servicios">
-      <h2 class="tituloSeccion tituloSeccionBlanco">Servicios</h2>
-      <div id="textoServicios">
+      <h2 class="tituloSeccion tituloSeccionBlanco" data-aos="fade-up">Servicios</h2>
+      <div id="textoServicios" data-aos="fade-up">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -111,55 +157,52 @@
         <div class="iconoservicio">
           <div class="imgServicio"><img src="media/serv1.png" alt="" /></div>
 
-          <p class="nombreServicio">Nombre del Servicio</p>
+          <p class="nombreServicio">Arraigo social</p>
         </div>
         <div class="iconoservicio">
           <div class="imgServicio"><img src="media/serv2.png" alt="" /></div>
-          <p class="nombreServicio">Nombre del Servicio</p>
+          <p class="nombreServicio">Renovación </p>
         </div>
         <div class="iconoservicio">
           <div class="imgServicio"><img src="media/serv3.png" alt="" /></div>
-          <p class="nombreServicio">Nombre del Servicio</p>
+          <p class="nombreServicio">Homologación de títulos </p>
         </div>
         <div class="iconoservicio">
           <div class="imgServicio"><img src="media/serv4.png" alt="" /></div>
-          <p class="nombreServicio">Nombre del Servicio</p>
+          <p class="nombreServicio">Estancia por estudios </p>
         </div>
         <div class="iconoservicio">
           <div class="imgServicio"><img src="media/serv5.png" alt="" /></div>
-          <p class="nombreServicio">Nombre del Servicio</p>
+          <p class="nombreServicio">Reagrupación </p>
         </div>
         <div class="iconoservicio">
           <div class="imgServicio"><img src="media/serv6.png" alt="" /></div>
-          <p class="nombreServicio">Nombre del Servicio</p>
+          <p class="nombreServicio">Familiar de ciudadano de la UE</p>
         </div>
         <div class="iconoservicio">
           <div class="imgServicio"><img src="media/serv7.png" alt="" /></div>
-          <p class="nombreServicio">Nombre del Servicio</p>
+          <p class="nombreServicio">Nacionalidad </p>
         </div>
         <div class="iconoservicio">
           <div class="imgServicio"><img src="media/serv8.png" alt="" /></div>
-          <p class="nombreServicio">Nombre del Servicio</p>
+          <p class="nombreServicio">Residencia</p>
         </div>
         <div class="iconoservicio">
           <div class="imgServicio"><img src="media/serv9.png" alt="" /></div>
-          <p class="nombreServicio">Nombre del Servicio</p>
+          <p class="nombreServicio">Profesionales</p>
         </div>
         <div class="iconoservicio">
           <div class="imgServicio"><img src="media/serv10.png" alt="" /></div>
-          <p class="nombreServicio">Nombre del Servicio</p>
-        </div>
-        <div class="iconoservicio">
-          <div class="imgServicio"><img src="media/serv1.png" alt="" /></div>
-          <p class="nombreServicio">Nombre del Servicio</p>
+          <p class="nombreServicio">Arraigo familiar </p>
         </div>
       </div>
     </section>
     <!-- ---------------------------------------FIN SERVICIOS------------------------ -->
-
+    
+    
     <!-- --------------------------------------- CONTACTO------------------------ -->
     <section id="contacto">
-      <h2 class="tituloSeccion">Contacto</h2>
+      <h2 class="tituloSeccion" data-aos="fade-up">Contacto</h2>
       <div id="contenedorContacto">
         <iframe
           id="map"
@@ -221,11 +264,46 @@
       <!-- ----------------------------------------FINAL MODAL CONTACTO------------------------ -->
     </section>
     <!-- ---------------------------------------FIN CONTACTO------------------------ -->
+    
 
+    <!-- ---------------------------------------PARALLAX------------------------ -->
+    <section id="parrallax">
+      <div class="containerParallax">
+          <div class="parallax-window" data-z-index="4" data-parallax="scroll" data-image-src="./media/parallax.jpg"></div>
+      </div>
+    </section>
+    <!-- ---------------------------------------FIN PARALLAX------------------------ -->
+
+    <!-- --------------------------------------- ACCORDION------------------------ -->
+    <div id="accordion">
+      <h3 id="boletines">Boletines</h3>
+      <button onclick="showAndHide()" class="accordion">Preguntas frecuentes</button>
+      <div class="accordionContent">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+          Atque maiores, neque reprehenderit sunt provident deserunt 
+          ducimus eveniet sequi quasi dr placeat.</p>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+            Atque maiores, neque reprehenderit sunt provident deserunt 
+            ducimus eveniet sequi quasi dr placeat.</p>
+      </div>
+      <button class="accordion" onclick="showAndHide()">Comunicado oficial de la UE</button>
+      <div class="accordionContent">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+          Aducimus eveniet sequi quasi dr placeat.</p>
+      </div>
+      <button class="accordion">Fechas de tramitación</button>
+      <div class="accordionContent" onclick="showAndHide()">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+          Atque maiores, neque reprehenderit sunt provident deserunt 
+          ducimus eveniet sequi quasi dr placeat.</p>
+      </div>
+    </div>
+    <!-- ---------------------------------------FIN ACCORDION------------------------ -->
+    
     <!-- ---------------------------------------FOOTER------------------------ -->
     <footer id="pie">
       <section id="galeria" id="formu">
-        <h2 class="tituloSeccion tituloSeccionBlanco">Galería</h2>
+        <h2 class="tituloSeccion tituloSeccionBlanco" data-aos="fade-up">Galería</h2>
         <div id="contenedorGaleria">
           <img class="imgGal" src="./media/gal1.jpg" alt="" />
           <img class="imgGal" src="./media/gal2.jpg" alt="" />
@@ -264,10 +342,10 @@
         <div class="contenedortexto">
           <h3 class="tituloRRSS">Redes Sociales</h3>
           <div id="contenedorImgRRSS">
-            <div class="imgRRSS"><i class="fab fa-whatsapp"></i></div>
-            <div class="imgRRSS"><i class="fab fa-instagram"></i></div>
-            <div class="imgRRSS"><i class="fab fa-tiktok"></i></div>
-            <div class="imgRRSS"><i class="fab fa-facebook-square"></i></div>
+            <div class="imgRRSS" data-aos="flip-up" data-aos-delay="300"><i class="fab fa-whatsapp"></i></div>
+            <div class="imgRRSS" data-aos="flip-up" data-aos-delay="400"><i class="fab fa-instagram"></i></div>
+            <div class="imgRRSS" data-aos="flip-up" data-aos-delay="500"><i class="fab fa-tiktok"></i></div>
+            <div class="imgRRSS" data-aos="flip-up" data-aos-delay="600"><i class="fab fa-facebook-square"></i></div>
           </div>
         </div>
       </div>
@@ -276,6 +354,9 @@
     <script>
       modalBienvenida();
       readyLightBosx();
+    </script>
+    <script>
+      AOS.init();//Inicializar libreria  de animacion de scrol
     </script>
   </body>
 </html>

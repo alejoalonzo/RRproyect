@@ -276,6 +276,7 @@ nav {
   float: left;
   text-align: center;
   color: #393e46;
+  cursor: pointer;
 }
 .pestanaActiva {
   color: #00adb5;
@@ -598,7 +599,27 @@ input {
   margin-top: 80px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
+
+.filterCategory button {
+  padding: 10px 28px;
+  color: #00adb5;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  margin-bottom: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: rgba(235, 235, 235, 1);
+}
+.filterCategory button.active {
+  background-color: #00adb5;
+  color: #eee;
+}
+
 .imgGal {
   width: 16.6%;
   height: 100%;
@@ -646,7 +667,8 @@ input {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  border: 1px solid #eee;
+  border: none;
+  /* border: 1px solid #eee; */
 }
 .lightBoxBtn:hover {
   background-color: #00adb5;
@@ -667,11 +689,12 @@ input {
 /* ------------------------FIN MODAL LIGHTBOX------ */
 #contenedorHorariosRRSS {
   width: 1200px;
-  height: 160px;
+  height: 300px;
   /* background-color: gray; */
   margin-top: 150px;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 125px;
   overflow: hidden;
 }
 .contenedortexto {
@@ -680,6 +703,59 @@ input {
   /* background-color: brown; */
   float: left;
 }
+/* ------------------------ TOOLTIP------ */
+.contenedortexto ul li {
+  position: relative;
+  top: 28px;
+  left: 190px;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: #eee;
+  margin: -10px 20px;
+  border-radius: 50px;
+  transition: 500ms;
+  cursor: pointer;
+}
+.contenedortexto ul li:hover {
+  background: #00adb5;
+  box-shadow: 0 0 0 4px #333, 0 0 0 6px #00adb5;
+}
+.contenedortexto ul li .contentTooltip {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  position: absolute;
+  bottom: 53px;
+  width: 400px;
+  background: #eee;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 500ms;
+  transform: translateX(-50%) translateY(-50px);
+}
+.contenedortexto ul li .contentTooltip h3 {
+  margin-bottom: 4px;
+}
+.contenedortexto ul li:hover .contentTooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.contenedortexto ul li .contentTooltip:before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #eee;
+  bottom: -15px;
+  left: 194px;
+  transform: rotate(45deg);
+}
+/* ------------------------ FIN TOOLTIP------ */
 .tituloRRSS {
   font-family: "Raleway", sans-serif;
   font-weight: 400;

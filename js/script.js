@@ -38,6 +38,7 @@ function modalDatosCliente(){
     document.getElementById("modalDatosCliente").style.display="block"; 
     document.documentElement.style.overflow="hidden";
 
+    var mensajeH1 = document.getElementById("mensajeH1ModalContacto");
     var nombre =document.getElementById("nombreContacto").value;
     var email =document.getElementById("emailContacto").value;
     var telefono =document.getElementById("telefonoContacto").value;
@@ -45,17 +46,25 @@ function modalDatosCliente(){
     // Pa que funcione tiene que tener el required en atributos del HTML
     (function formCheck(){
         if(!document.getElementById("nombreContacto").checkValidity()){
+            mensajeH1 = "Oops."
             mensaje = "Introduce un nombre correcto.";
             document.getElementById("textoModalCliente").innerHTML = mensaje;
+            document.getElementById("mensajeH1ModalContacto").innerHTML = mensajeH1;
         }else if(!document.getElementById("emailContacto").checkValidity()) {
+            mensajeH1 = "Oops."
             mensaje = "Introduce un E-mail correcto.";
             document.getElementById("textoModalCliente").innerHTML = mensaje;
+            document.getElementById("mensajeH1ModalContacto").innerHTML = mensajeH1;
         }else if(!document.getElementById("telefonoContacto").checkValidity()) {
+            mensajeH1 = "Oops."
             mensaje = "Introduce un número de teléfono correcto.";
             document.getElementById("textoModalCliente").innerHTML = mensaje;
+            document.getElementById("mensajeH1ModalContacto").innerHTML = mensajeH1;
         }else{
+            mensajeH1 = "Sus datos se han enviado."
             mensaje = "Apreciado " + nombre + ". Nos pondremos en contacto con usted, enviándole un E-mal a la dirección " + email + ", o le llamaremos al número " + telefono + ". Gracias.";
             document.getElementById("textoModalCliente").innerHTML = mensaje
+            document.getElementById("mensajeH1ModalContacto").innerHTML = mensajeH1;
         }
     })();
 }
@@ -201,6 +210,31 @@ function showAndHide() {
         }
     } 
 }
+// -----------------------------------------------------FIN ACORDION------------------- 
 
+// -----------------------------------------------------FILTER IMG-------------------
+function filterImg() {
+    //llamada selectores
+    const btnCategory =  document.querySelectorAll(".filterCategory button");
+    const imgCategory =  document.querySelectorAll(".itemBox");
 
+    btnCategory.forEach(item=>{
+        item.addEventListener("click", function() {
+            for(let i= 0; i<btnCategory.length; i++){
+                btnCategory[i].classList.remove("active")
+            }
+            item.classList.add("active");
 
+            //mostrar categorias
+            imgCategory.forEach(show => {
+                show.style.display="none";
+                let imgCategories = item.textContent.toLowerCase();
+                if(show.getAttribute("data-att")===imgCategories || imgCategories==="todas"){
+                    show.style.display ="block";
+                }
+            })
+        })
+    })
+}
+
+// -----------------------------------------------------FIN FILTER IMG-------------------

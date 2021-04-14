@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RR Extranjería</title>
+    <link rel="icon" type="image/x-icon" href="./media/logoIcon.jpg">
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/script.js"></script>
     <!-- Fuentes -->
@@ -116,6 +117,7 @@
               src="./media/valores.mp4"
               id="videoFilo"
               controls
+              muted
               poster="./media/posterVideo.jpg"
             ></video>
           </div>
@@ -253,7 +255,7 @@
       <!-- ----------------------------------------MODAL CONTACTO------------------------ -->
       <div id="modalDatosCliente">
         <div id="modalBoxDatosCliente">
-          <h1>Sus datos se han enviado</h1>
+          <h1 id="mensajeH1ModalContacto">Sus datos se han enviado.</h1>
           <p id="textoModalCliente">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolore
             sequi quaerat
@@ -276,8 +278,8 @@
 
     <!-- --------------------------------------- ACCORDION------------------------ -->
     <div id="accordion">
-      <h3 id="boletines">Boletines</h3>
-      <button onclick="showAndHide()" class="accordion">Preguntas frecuentes</button>
+      <h3 id="boletines">Boletín</h3>
+      <button onclick="showAndHide()" class="accordion">Boletín semanal</button>
       <div class="accordionContent">
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
           Atque maiores, neque reprehenderit sunt provident deserunt 
@@ -305,12 +307,19 @@
       <section id="galeria" id="formu">
         <h2 class="tituloSeccion tituloSeccionBlanco" data-aos="fade-up">Galería</h2>
         <div id="contenedorGaleria">
-          <img class="imgGal" src="./media/gal1.jpg" alt="" />
-          <img class="imgGal" src="./media/gal2.jpg" alt="" />
-          <img class="imgGal" src="./media/gal3.jpg" alt="" />
-          <img class="imgGal" src="./media/gal4.jpg" alt="" />
-          <img class="imgGal" src="./media/gal5.jpg" alt="" />
-          <img class="imgGal" src="./media/gal6.jpg" alt="" />
+          <div class="filterCategory">
+            <button class="active">Todas</button>
+            <button>Instagram</button>
+            <button>Equipo</button>
+          </div>
+          <div class="filterCategoryImg">
+            <div class="itemBox" data-att="equipo"><img class="imgGal" src="./media/gal1.jpg" alt="1" /></div> 
+            <div class="itemBox" data-att="instagram"><img class="imgGal" src="./media/gal2.jpg" alt="2" /></div>
+            <div class="itemBox" data-att="equipo"><img class="imgGal" src="./media/gal3.jpg" alt="3" /></div>
+            <div class="itemBox" data-att="instagram"><img class="imgGal" src="./media/gal4.jpg" alt="4" /></div>
+            <div class="itemBox" data-att="equipo"><img class="imgGal" src="./media/gal5.jpg" alt="5" /></div>
+            <div class="itemBox" data-att="instagram"><img class="imgGal" src="./media/gal6.jpg" alt="6" /></div>
+          </div>
         </div>
         <!-- ---------------------------------------MODAL GALERIA------------------------ -->
         <div id="lightBoxGale">
@@ -322,15 +331,29 @@
             <i class="fas fa-chevron-left"></i>
           </button>
         </div>
-        <!-- ---------------------------------------MODAL GALERIA------------------------ -->
+        <!-- ---------------------------------------FIN MODAL GALERIA------------------------ -->
       </section>
       <div id="contenedorHorariosRRSS">
         <div class="contenedortexto">
+          <!-- ---------------------------------------TOOLTIP------------------------ -->
+          <ul>
+            <a href="#contacto">
+              <li>
+                <div class="contentTooltip">
+                  <h3>¿Le llamamos?</h3>
+                  <p>Lorem ipsum dolor, sit amet consectetur 
+                    adipisicing elit. 
+                  </p>
+                </div>
+              </li>
+            </a> 
+          </ul>
+          <!-- ---------------------------------------FIN TOOLTIP------------------------ -->
           <h3 class="tituloRRSS">Contacto</h3>
           <p class="textoFooter">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore
-          </p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore
+          </p> 
         </div>
         <div class="contenedortexto">
           <h3 class="tituloRRSS">Horario de atención</h3>
@@ -357,6 +380,9 @@
     </script>
     <script>
       AOS.init();//Inicializar libreria  de animacion de scrol
+    </script>
+    <script>
+      filterImg();
     </script>
   </body>
 </html>
